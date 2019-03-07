@@ -44,6 +44,11 @@ public class BackendController {
 		// 2.  WH
 		// 3.  Users
 		// 4.  Other stuff?
+		//
+		// Setup s = new Setup();
+		// Set the attributes
+		// Execute the methods
+	
 		return ("Connected to Warehouse: " + wh);
 	}
 
