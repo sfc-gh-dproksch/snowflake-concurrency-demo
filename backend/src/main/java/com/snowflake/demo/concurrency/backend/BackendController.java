@@ -32,10 +32,18 @@ public class BackendController {
 		* 3. Create the needed warehouses
 		*    - DEMO_ETL
 		*    - DEMO_DS
-		*    - DEMO_BI1
-		*    - DEMO_BI2
+		*    - DEMO_BI1  MCW(1,6)
+		*    - DEMO_BI2  MCW(2,6)
 		*
 		**/
+		
+		// Create new Setup Object
+		// Create Connection
+		// Create Snowflake Objects
+		// 1.  DB
+		// 2.  WH
+		// 3.  Users
+		// 4.  Other stuff?
 		return ("Connected to Warehouse: " + wh);
 	}
 
