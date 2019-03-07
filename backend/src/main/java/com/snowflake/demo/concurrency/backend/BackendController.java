@@ -69,7 +69,7 @@ public class BackendController {
 		// Set the attributes
 		// Execute the methods
 	
-		return ("Connected to Warehouse: " + wh);
+		return ("Create Environment");
 	}
 
 	/*
@@ -93,4 +93,43 @@ public class BackendController {
 		) {
 		return ("Creating Warehouse: " + wh);
 	}
+
+	/**
+	*
+	*  Begin ETL Section
+	*
+	**/
+	@PostMapping("/backend/etl")
+	public String postETL(
+		@RequestParam(value="etl", defaultValue="on") String etl
+		) {
+
+		boolean good = false;
+		String resultString = "Invalid Choice: " + etl.trim() +
+			" Valid choices:  ON OFF";
+		if (etl.equalsIgnoreCase("ON")) {
+			good=true;
+		}
+		if (etl.equalsIgnoreCase("OFF")) {
+			good=true;
+		}
+		if (good) {
+			resultString = "OK:  200";
+		}
+		return resultString.trim();
+	}
+
+
+	/**
+	*
+	*  Begin Data Science Section
+	*
+	**/
+
+
+	/**
+	*
+	*  Begin Analytical Query Section
+	*
+	**/
 }
