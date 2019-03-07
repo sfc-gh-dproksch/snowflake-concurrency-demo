@@ -13,6 +13,25 @@ import org.springframework.http.HttpStatus;
 @RestController
 public class BackendController {
 
+	@PostMapping("/backend/teardown")
+	public String postSetup() {
+		/**
+		*
+		*  Tear down the Demo environment
+		*
+		*  1.  Destroy Tables, Views, Shares, Stages, etc.
+		*  2.  Destroy Warehouses
+		*  3.  Destroy Database(s)
+		*  4.  Remove Users
+		*
+		**/	
+
+		// Use existing Demo object
+		// - Exercise methods to accomplish teardown.
+		// 
+		return ("Environment successfully tore down");
+	}
+
 	@PostMapping("/backend/setup")
 	public String postSetup(
 		@RequestParam(value="account", defaultValue="none") String account
@@ -22,7 +41,8 @@ public class BackendController {
 		/**
 		*
 		* Setup the Demo environment
-		* 1. Need Account, User, and Private Key to make connection to Snowflake.
+		* 1. Need Account, User, and Private Key to make 
+		*    connection to Snowflake.
 		*
 		* 2. Create the needed Databases
 		*    -  X
@@ -37,7 +57,7 @@ public class BackendController {
 		*
 		**/
 		
-		// Create new Setup Object
+		// Create new Demo Object
 		// Create Connection
 		// Create Snowflake Objects
 		// 1.  DB
@@ -45,7 +65,7 @@ public class BackendController {
 		// 3.  Users
 		// 4.  Other stuff?
 		//
-		// Setup s = new Setup();
+		// Demo s = new Demo();
 		// Set the attributes
 		// Execute the methods
 	
