@@ -6,12 +6,16 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.HttpStatus;
 
+import com.snowflake.demo.concurrency.backend.SnowflakeConnection;
+import com.snowflake.demo.concurrency.backend.SetupRequest;
 
 @RestController
 public class BackendController {
+private SnowflakeConnection conn = null;
 
 	/**
 	*
@@ -37,12 +41,8 @@ public class BackendController {
 		return ("Environment successfully tore down");
 	}
 
-	@PostMapping("/backend/setup")
-	public String postSetup(
-		@RequestParam(value="account", defaultValue="none") String account
-		, @RequestParam(value="user", defaultValue="user") String user
-		, @RequestParam(value="privateKey", defaultValue="none") String privKey
-		) {
+	@PostMapping(path = "/backend/setup", consumes = "application/json", produces = "application/json")
+	public String postSetup( @RequestBody SetupRequest request) {
 		/**
 		*
 		* Setup the Demo environment
@@ -73,6 +73,14 @@ public class BackendController {
 		// Demo s = new Demo();
 		// Set the attributes
 		// Execute the methods
+
+		if (conn == null) {
+			conn = new SnowflakeConnection();
+		}
+		conn.setAccount(request.getAccount());
+		conn.setPrivateKey(request.getPrivateKey());
+		conn.setUser(request.getUser());
+		conn.makeConnection();	
 	
 		return ("Create Environment");
 	}

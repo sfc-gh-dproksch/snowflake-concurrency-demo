@@ -1,2 +1,4 @@
-com/snowflake/demo/concurrency/backend/BackendController.class
 com/snowflake/demo/concurrency/ConcurrencyApplication.class
+com/snowflake/demo/concurrency/backend/BackendController.class
+com/snowflake/demo/concurrency/backend/SetupRequest.class
+com/snowflake/demo/concurrency/backend/SnowflakeConnection.class

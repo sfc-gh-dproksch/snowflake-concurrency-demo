@@ -44,6 +44,16 @@
 			<artifactId>spring-restdocs-webtestclient</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+    			<groupId>org.projectlombok</groupId>
+    			<artifactId>lombok</artifactId>
+    			<version>1.18.4</version>
+    		</dependency>
+		<dependency>
+    		<groupId>net.snowflake</groupId>
+    		<artifactId>snowflake-jdbc</artifactId>
+    		<version>3.6.27</version>
+		</dependency>
 	</dependencies>
 
 	<build>
