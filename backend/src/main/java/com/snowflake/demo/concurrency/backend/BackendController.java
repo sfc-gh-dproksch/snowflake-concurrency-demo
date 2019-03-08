@@ -133,6 +133,28 @@ public class BackendController {
 	*
 	**/
 
+	@PostMapping("/backend/ds")
+	public String postDS(
+		@RequestParam(value="ds", defaultValue="on") String ds
+		) {
+
+		boolean good = false;
+		String resultString = "Invalid Choice: " + etl.trim() +
+			" Valid choices:  ON OFF";
+		if (ds.equalsIgnoreCase("ON")) {
+			good=true;
+			// start the Data Science part of the demo
+		}
+		if (ds.equalsIgnoreCase("OFF")) {
+			good=true;
+			// stop the Data Science part of the demo
+		}
+		if (good) {
+			resultString = "OK:  200";
+		}
+		return resultString.trim();
+	}
+
 
 	/**
 	*
