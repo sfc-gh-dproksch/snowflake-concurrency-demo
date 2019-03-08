@@ -13,6 +13,11 @@ import org.springframework.http.HttpStatus;
 @RestController
 public class BackendController {
 
+	/**
+	*
+	* Setup / Teardown section
+	*
+	**/
 	@PostMapping("/backend/teardown")
 	public String postSetup() {
 		/**
@@ -109,9 +114,11 @@ public class BackendController {
 			" Valid choices:  ON OFF";
 		if (etl.equalsIgnoreCase("ON")) {
 			good=true;
+			// start the ETL part of the demo
 		}
 		if (etl.equalsIgnoreCase("OFF")) {
 			good=true;
+			// stop the ETL part of the demo
 		}
 		if (good) {
 			resultString = "OK:  200";
