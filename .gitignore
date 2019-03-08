@@ -1,5 +1,4 @@
-# Object file
-*.o
+# target directory file
+target/*
+*.swp
 
-# Ada Library Information
-*.ali
