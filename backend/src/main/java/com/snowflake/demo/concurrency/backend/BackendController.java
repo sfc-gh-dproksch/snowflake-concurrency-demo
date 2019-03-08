@@ -139,7 +139,7 @@ public class BackendController {
 		) {
 
 		boolean good = false;
-		String resultString = "Invalid Choice: " + etl.trim() +
+		String resultString = "Invalid Choice: " + ds.trim() +
 			" Valid choices:  ON OFF";
 		if (ds.equalsIgnoreCase("ON")) {
 			good=true;
